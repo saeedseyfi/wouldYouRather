@@ -1,0 +1,222 @@
+@import '~typeface-roboto/index.css';
+
+@mixin clearfix {
+  &::after {
+    content: '';
+    clear: both;
+    display: table;
+  }
+}
+
+@mixin center($width) {
+  & {
+    max-width: $width;
+    margin: 0 auto;
+  }
+}
+
+html {
+  font-size: 16px;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Roboto', 'sans-serif';
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+header {
+  @include clearfix;
+  background: lightgray;
+  margin-bottom: 1rem;
+  padding: 1rem 0;
+
+  > div {
+    @include clearfix;
+    @include center(600px);
+  }
+
+  nav {
+    float: left;
+  }
+
+  ul {
+    list-style: none;
+
+    li {
+      float: left;
+      margin: 0 .5rem;
+
+      &:first-child {
+        margin-left: 0;
+      }
+
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  }
+
+  .user-info {
+    float: right;
+  }
+}
+
+.clearfix {
+  @include clearfix;
+}
+
+button,
+.btn {
+  font-size: .7rem;
+  border: 1px solid #cccccc;
+  text-decoration: none;
+  color: #555555;
+  background: #ffffff;
+  padding: 5px;
+  border-radius: 5px;
+
+  &.selected {
+    background: lightgray;
+  }
+}
+
+select,
+input {
+  font-size: .7rem;
+  border: 1px solid #cccccc;
+  text-decoration: none;
+  color: #555555;
+  background: #ffffff;
+  border-radius: 5px;
+}
+
+select {
+  height: 25px;
+}
+
+input {
+  height: 21px;
+}
+
+img {
+  border-radius: 5px;
+}
+
+main {
+  @include center(600px);
+}
+
+.poll {
+  @include clearfix;
+  background: #eee;
+  padding: 1rem;
+  margin: 1rem 0 0;
+  border-radius: 5px;
+
+  h2 {
+    margin: 0;
+  }
+
+  small {
+    display: block;
+    margin: 0 0 1rem;
+  }
+
+  .author {
+    float: left;
+    margin-right: 1rem;
+    width: 88px;
+    text-align: center;
+
+    img {
+      display: block;
+      border-radius: 5px;
+      width: 88px;
+      height: 88px;
+    }
+  }
+
+  .question {
+    float: left;
+    width: calc(100% - 88px - 1rem);
+  }
+
+  .voted {
+    border-radius: 5px;
+    border: 1px solid lightgray;
+  }
+
+  &:last-child {
+    margin-bottom: 1rem;
+  }
+}
+
+.connected {
+  width: 100%;
+  display: table;
+
+  > * {
+    display: table-cell;
+    width: 50%;
+    border-radius: 0;
+
+    &:first-child {
+      border-radius: 5px 0 0 5px;
+    }
+
+    &:last-child {
+      border-radius: 0 5px 5px 0;
+    }
+  }
+}
+
+.user {
+  @include clearfix;
+  background: #eee;
+  padding: 1rem;
+  margin: 1rem 0 0;
+  border-radius: 5px;
+
+  h2,
+  p {
+    margin: 0;
+  }
+
+  h2 {
+    margin-bottom: 1rem;
+  }
+
+  .avatar {
+    float: left;
+    margin-right: 1rem;
+    width: 88px;
+    text-align: center;
+
+    img {
+      display: block;
+      border-radius: 5px;
+      width: 88px;
+      height: 88px;
+    }
+  }
+
+  .stats {
+    float: left;
+    width: calc(100% - 88px - 1rem);
+  }
+
+  &:last-child {
+    margin-bottom: 1rem;
+  }
+}

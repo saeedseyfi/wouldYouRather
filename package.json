@@ -1,0 +1,35 @@
+{
+  "name": "reactnd-project-would-you-rather",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "prestart": "npm run sass",
+    "start": "concurrently --kill-others \"npm run watch\" \"react-scripts start\"",
+    "prebuild": "npm run sass",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject",
+    "sass": "sass src/index.scss src/index.css",
+    "watch": "npm run sass -- --watch"
+  },
+  "dependencies": {
+    "actions": "file:src/actions",
+    "api": "file:src/api",
+    "components": "file:src/components",
+    "react": "^16.4.1",
+    "react-dom": "^16.4.1",
+    "react-redux": "^5.0.7",
+    "react-redux-loading": "^1.0.1",
+    "react-router-dom": "^4.3.1",
+    "reducers": "file:src/reducers",
+    "redux": "^4.0.0",
+    "redux-thunk": "^2.3.0",
+    "typeface-roboto": "0.0.54"
+  },
+  "devDependencies": {
+    "concurrently": "^3.6.0",
+    "prop-types": "^15.6.2",
+    "react-scripts": "^1.1.4",
+    "sass": "^1.10.0"
+  }
+}
